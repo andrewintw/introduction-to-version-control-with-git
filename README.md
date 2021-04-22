@@ -151,15 +151,15 @@ local === push ===> remote: IoT_Project.git
 
 ## 小故事: Git 怎麼誕生的
 
-版本控制系統在大型專案上扮演非常重要的角色，例如 linux kernel 的開發工作管理就是。早期 Linux kernel 的整合工作都是由 Kenel 的原作者 Linus Torvalds 以最原始的人工完成的。
+版本控制系統在大型專案上扮演非常重要的角色，例如像 Linux Kernel 這樣的超大型協作專案是非常需要的。早期 Linux kernel 的整合工作都是由 Kenel 的原作者 Linus Torvalds 以最原始的人工完成的。
 
-後來 1999 年有個公司 BitMover 發展了一個版本控制系統 BitKeeper，並免費提供給 Linux 社群使用，條件式不能試圖破解這個商用軟體。因為它分散式的特性讓 Linus 可以把些審查工作交給一些較信任的開發者。2002 年開始，Linux Kernel 的版本管理基本上已全部以 BitKeeper 管理。
+後來 1999 年有個公司 BitMover 發展了一個版本控制系統 BitKeeper，並免費授權給 Linux 社群使用，條件則是不能試圖破解這個商用軟體。因為它分散式的特性讓 Linus 可以把些審查工作交給一些比較信任的開發者。2002 年開始，Linux Kernel 的版本管理基本上已全部由 BitKeeper 管理。
 
-畢竟 BitKeeper 並非開源的軟體，所以就有些開源基本教義派的人，像是 RSM 會批評 Linus 不該使用一個非自由軟體來管理一個全世界最大的開源專案。但我想以 [Linus 的個性](https://www.youtube.com/watch?v=iYWzMvlj2RQ)應該是沒在鳥他的 XD
+畢竟 BitKeeper 並非開源軟體，所以就有些開源基本教義派的人，像是 RSM 就會批評 Linus 不該使用一個非自由軟體來管理一個全世界最大的開源專案。但我想以 [Linus 的個性](https://www.youtube.com/watch?v=iYWzMvlj2RQ)應該是沒在鳥他的 XD
 
-2005 年 Linus 當時所屬的公司的老闆 Andrew Morton 資助了一個專案，開始試圖對 BitKeeper 進行逆向工程破解，試圖自製一個類似的開源工具。BitMover 後來知道這件事情後，為了維護公司的利益就停止了對 Linux 社群提供免費使用 BitKeeper 的授權。失去 BitKeeper 後，Linus 非常苦惱，他研究了當時所有的版本控制系統，但卻沒有一個是他滿意的。於是...
+2005 年 Linus 當時所屬的公司的老闆 Andrew Morton 資助了一個專案，開始試圖對 BitKeeper 進行逆向工程破解，打算自製一個類似的開源工具。BitMover 公司後來知道這件事情，為了維護公司的利益就停止對 Linux 社群提供免費使用 BitKeeper 的授權。失去 BitKeeper 後，Linus 非常苦惱，他研究了當時所有的版本控制系統，但卻沒有一個是他滿意的。於是...
 
-他花了 10 天寫了約 1244 行程式，完成了 git 版本控制系統。之後這個系統就在往後的日子裡變成全世界最受歡迎的版本控制系統了。
+這位大神花了 10 天寫了約 1244 行程式，完成了 git 版本控制系統。之後這個系統就在往後的日子裡變成全世界最受歡迎的版本控制系統了。
 
 2016 年，git 誕生的 10 年後，BitKeeper 也開源了，但我想早就已經沒人理它了 (幫QQ)。
 
