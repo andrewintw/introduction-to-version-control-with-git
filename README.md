@@ -62,29 +62,32 @@ Alice 做完整合工作後，就會把三個人的結果變成 project_merge.01
 
 ## 版本控制系統的使用邏輯
 
-像 git 這類的版本控制系統的使用邏輯都很類似。
+git 這類的版本控制系統的使用邏輯都很類似。
 
-首先它是 client-server 架構。意思是通常需要有個主機當作 git server，然後在你自己的電腦上使用 git client 工具與遠端的 git server 溝通。通常，在 git 說明的文件中 git server 會稱為 remote 端，而運作 client tools 的你的電腦則稱為 local 端。
+首先它是 client-server 架構。意思是通常需要有個主機當作 git server，然後在你自己的電腦上使用 git client 工具與遠端的 git server 溝通。通常在 git 說明的文件中會將 git server 稱為 remote 端，而運作 client tools 的你的電腦則稱為 local 端。
 
 ```
 local: git client tools <========> remote: git server
 ```
 
-以下的說明會以 remote 和 local 代稱。
+以下的說明會以 remote 和 local 代稱 server 與 local。
 
-通常使用版本控制系統的時候，我們會先把目前最新的開發進度，例如: project_01-31 的進度都先上傳到 remote 端。所以你需要在 remote 端開一個放置當前最新程式碼的地方。這個 "地方"，git 稱為 repository。有人翻譯為檔案庫，也有人簡寫為 repo. 其實不用想得太複雜，使用上你所看到的也會是一整個像是名為 IoT_Project/ 的資料夾。只是這個資料夾會在 remote 端以 git repository 的檔案庫的方式存在。
+通常**首次**使用版本控制系統的時候，我們會先把目前最新的開發進度，例如: project_01-31 的進度都先上傳到 remote 端。所以你需要在 remote 端開一個放置當前最新程式碼的地方。這個 "地方"，git 稱為 repository。有人翻譯為檔案庫，也有人簡寫為 repo. 其實不用想得太複雜，使用上你所看到的也會是一整個像是名為 IoT_Project/ 的資料夾。只是這個資料夾會在 remote 端以 git repository 的檔案庫的方式存在。
 
-所以開始版本控管的第一件事情，就是在 remote 端建立一個 git repository，然後給它一個名稱 (ex: IoT_Project) 然後把你在 local 目前最新的進度給上傳上去。順帶一提，在 git 中，把檔案從 local 端推到(上傳到) remote 端的行為，稱為 push。
-
+所以開始使用版本控管的第一件事情，就是在 remote 端建立一個 git repository，然後給它一個名稱 (ex: IoT_Project) 然後把你在 local 目前最新的進度給上傳上去。順帶一提，在 git 中，把檔案從 local 端推到(上傳到) remote 端的行為，稱為 push。
 
 ```
 1. remote 端建立一個 repository (ex: IoT_Project.git)
 2. local 端將當前最新的狀況 "push" 到 remote 端
 ```
 
-接著，隔天上班後，Andrew/Sabrina/Zoe 就可以把 remote 端的 IoT_Project repository 下載回來自己的電腦上 (local)修改。這個第一次所進行的下載動作，git 稱為 clone。從字面上很好理解，就是原封不動從 remote 端複製一份到 local 端成為副本 (copy)。
+```
+local === push ===> remote: IoT_Project.git
+```
 
-所以 Andrew/Sabrina/Zoe 分別在自己的電腦上從 remote 端 clone 一份到自己的電腦上，然後開始進行各自的修改。
+接著，隔天上班後，Andrew/Sabrina/Zoe 就可以把 remote 端的 IoT_Project repository 下載回來自己的電腦上 (local)修改。這個第一次所進行的下載動作，git 稱為 clone。從字面上很好理解，就是原封不動從 remote 端複製一份副本 (copy) 到 local 端。
+
+所以 Andrew/Sabrina/Zoe 分別在自己的電腦上從 remote 端 clone 一份到自己的電腦上，然後開始進行當日各自的修改。
 
 ```
 (Andrew)  andrew_copy  <=== clone === (remote: IoT_Project.git)
@@ -92,7 +95,7 @@ local: git client tools <========> remote: git server
 (Zoe)     zoe_copy     <=== clone === (remote: IoT_Project.git)
 ```
 
-下班前，Sabrina 率先完成了工作，於是她把今天的進度再次 push 到 remote 端。假設 Sabrina 修改的內容表示為 sabrina_diff，所以一旦 Sabrina psuh 成功後，你可以想像 remote 端的進度可以想像為 "IoT_Project.git + sabrina_diff" ==> 也就是將今天 clone 下來後 Sabrina 所作的 "修改部分" push 到 remote 端。
+下班前，Sabrina 率先完成了工作，於是她把今天的進度再次 push 到 remote 端。假設 Sabrina 修改的部分表示為 sabrina_**diff**，一旦 Sabrina psuh 成功後，你可以想像 remote 端的 repository 狀態應該為 "IoT_Project.git **+ sabrina_diff**" ==> 也就是將今天 clone 下來後 Sabrina 所作的 "**修改部分**" push 到 remote 端。
 
 
 ```
@@ -103,25 +106,25 @@ local: git client tools <========> remote: git server
 
 然後換 Zoe 準備要下班，當她準備把自己今天所做的修改 zoe_diff push 到 remote 端的時候...精彩的部分來了!!
 
-此時因 remote 端的最新狀態是 IoT_Project.git + sabrina_diff。
+此時因為 remote 端目前最新的狀態是 IoT_Project.git + sabrina_diff。
 
 而 Zoe 本地端(local)的 zoe_copy 狀態應該是 "IoT_Project.git + zoe_diff"。
 
-所以當 Zoe 嘗試 push zoe_diff 上 remote 時，git 會檢查 Zoe 的 local 和 remote 的狀態，發現 remote 的狀態已經更新過了 (被先 push 的 Sabrina 更改的)。所以因為 remote 比較新，所以 git 會要求 Zoe 必須「要先更新到跟 remote 端同步的狀態」。然後才能 push 你的修改部分 (zoe_diff)。
+所以當 Zoe 嘗試將 zoe_diff push 上 remote 時，git 會檢查 Zoe 的 local 和 remote 的狀態。當 git 發現 remote 的狀態已經更新過了 (被先 push 的 Sabrina 更改的)，所以 remote 比較新。git 會要求 Zoe 必須要「**先更新到跟 remote 端同步的狀態**」，然後才能 push 你的修改部分 (zoe_diff)。
 
 
 ```
 (Andrew)  andrew_copy  
 (Sabrina) sabrina_copy
-(Zoe)     zoe_copy     === push fail! ===>X (remote: IoT_Project.git + sabrina_diff)
+(Zoe)     zoe_copy === push fail! ===>XXX (remote: IoT_Project.git + sabrina_diff)
 ```
 
-而這個把 remote 端最新的狀況同步回 local 端的動作，git 稱為 pull (把最新的狀態從 remote 拉回 local)
+而這個「**把 remote 端最新的狀況同步回 local 端的動作**」，git 稱為 pull (把最新的狀態從 remote "拉回" local)。
 
 ```
 (Andrew)  andrew_copy  
 (Sabrina) sabrina_copy
-(Zoe)     zoe_copy     <=== pull === (remote: IoT_Project.git + sabrina_diff)
+(Zoe)     zoe_copy <=== pull === (remote: IoT_Project.git + sabrina_diff)
 ```
 
 一旦 Zoe 做了 pull，你可以想像 Zoe 的 local 應該等同於 "IoT_Project.git + sabrina_diff + zoe_diff"
@@ -134,7 +137,7 @@ local: git client tools <========> remote: git server
 
 
 ```
-(Zoe) IoT_Project.git + sabrina_diff + zoe_diff  <=== push === (remote: IoT_Project.git + sabrina_diff + zoe_diff)
+(Zoe) IoT_Project.git + sabrina_diff + zoe_diff  === push ===> (remote: IoT_Project.git + sabrina_diff + zoe_diff)
 ```
 
 等到 Zoe push 成功了。你可以想像得到 remote 端就會有今天一早的狀態 "IoT_Project.git" 加上 Sabrina 修改的 diff 和 Zoe 所修改的 diff。
