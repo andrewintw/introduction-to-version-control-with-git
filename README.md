@@ -166,7 +166,9 @@ local === push ===> remote: IoT_Project.git
 
 ## Git 和 GitHub 之間的關係是什麼?
 
-git 於 2005 年問世後，GitHub 在 2008 年 2 月上線。剛剛提到 git 是個 client-server 架構。你可以把 GitHub 想像為一個幫你處理 git server 端事情的雲服務平台。你可以在 GitHub 所提供的網頁介面上，透過按鈕和簡單的設定建立 repository，也可以進行編輯、查看程式碼提交紀錄...甚至還可以討論 issue。簡單說就是原本你需要使用指令做的一些事情，現在只要在網頁上點一點、輸入一些設定值就可以完成。因為你 GitHub 扮演 git server 的角色，server 也是儲存 repository 的地方。等於你必須將你的程式碼 push 到 GitHub 的主機上，因此這類的服務也稱為「程式碼託管」平台。
+git 於 2005 年問世後，GitHub 在 2008 年 2 月上線。剛剛提到 git 是個 client-server 架構。你可以把 GitHub 想像為一個幫你處理 git server 端事情的雲服務平台。你可以在 GitHub 所提供的網頁介面上，透過按鈕和簡單的設定建立 repository，也可以進行編輯、查看程式碼提交紀錄...甚至還可以討論 issue。
+
+簡單說就是原本你需要使用指令做的一些事情，現在只要在網頁上點一點、輸入一些設定值就可以完成。因為你 GitHub 扮演 git server 的角色，server 也是儲存 repository 的地方。等於你必須將你的程式碼 push 到 GitHub 的主機上，因此這類的服務也稱為「程式碼託管」平台。
 
 GitHub 目前仍然是全世界最大的程式碼託管平台...也是全世界最大的工程師交友中心 (誤 XD)
 
