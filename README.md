@@ -59,6 +59,8 @@ Alice 做完整合工作後，就會把三個人的結果變成 project_merge.01
 
 而 Google Drive 就跟上面所說的網路芳鄰一樣，並沒有任何版本控管的能力。
 
+另外，使用 Git/GitHub 這類的系統並不限於軟體開發者，Git 不是只適用於放程式碼而已。只要 "版本管理" 這件事情對你你想要管理的資源來說是重要的，你就可以考慮使用它。像是投影片的版本、甚至是影片的版本。
+
 
 ## 版本控制系統的使用邏輯
 
@@ -224,5 +226,38 @@ C:\Users\andrew\Desktop>cp recommect.txt D:\
 而 branch 是版本控制系統中的一種管理方式，概念是你可以基於某一個狀態的程式碼建立一個分支 (branch)，這個分支版本通常可能是為了增加新的功能，或是解決 BUG，使用 branch 的用意在於不再修改的過程中更動主要的 code base。通常分支版本完成後，會再 merge 回主要的 code base。關於 branch 的管理屬於比較進階的議題，這裡不會提到。針對一般的個人專案與小型協作專案也不太會用到。 
 
 ![](https://miro.medium.com/max/1600/1*RTgn1s0GY8r0rSPsAzf8NQ.png)
+
+
+補充: 簡單玩 5 分鐘的個人心得
+
+主要是測試 create a new repository, clone, push:
+
+
+* Sourcetree
+	* 剛學 git 的時候我就聽過它了，當時下載過一次，覺得好複雜就沒用了。剛剛又重新玩了一次...嗯...還是覺得有點複雜。
+	* 我的 push 畫面一直沒帶出我 commit 的檔案，造成我無法 push，不知道為何。
+	* 在 windows 上顯示的字型好醜 XD 其實我個人不喜歡。
+	* 比起 GitKraken，我覺得執行速度偏慢
+	* 可以直接在 local 端開啟 terminal，對想要使用指令的人來說很方便 (謎之音: 啊你就用指令就好了呀 XD)
+* GitHub Desktop
+	* 一開始不清楚他怎麼管理 local copy，弄清楚後其實這個工具真的算是蠻簡單的。
+	* 而且它試圖隱藏 git stage 的概念，讓流程簡單化
+	* 一樣在 windows 上顯示的字型好醜 XD
+* GitKraken
+	* 跨平台是優點，而且字型畫面好看，加分 XD
+	* 介面跟 Sourcetree 一樣有點複雜，但安排的邏輯比 Sourcetree 好
+	* 但至少我有成功 push 檔案。
+	* Create Repository 後順便幫你 Clone 的設定很方便
+* TortoiseGit
+	* 很久以前我用過它的 TortoiseSVN，基本上使用的方式差不多
+	* 把所有功能都放在滑鼠右鍵選單中，嗯...我不確定這是不是個好點子
+	* 跟上面其他三種 tools 的差別是，它沒有整合 GitHub 帳號。
+		* 如果你打算使用 GitHub 服務，這就會是它最大的缺點	
+		* 所以你無法直接透過 TortoiseGit 在 remote 端建立新的 repository
+	
+稍微提一點是，上面的 tools 除了 TortoiseGit 以外，其餘都能整合 GitHub 服務。"整合 GitHub" 服務的意思是一旦你在軟體的設定引導頁面中登入 GitHub 帳號，並且設定好 key-pair (公鑰/私鑰) 之後，你就可以直接在 GUI Tool 中帶出你在 remote 端的 repository 清單。你也可以透過 GUI tool 直接在 GitHub 上建立新的 repository。如果你打算使用 GitHub/GitLab 這樣的服務，建議使用能夠整合這些平台帳戶的 GUI Tools 會比較方便。
+
+因此我的建議是: 先試試看使用 GitKraken，真的覺得太複雜就換 GitHub Desktop。
+
 
 ~ END ~
