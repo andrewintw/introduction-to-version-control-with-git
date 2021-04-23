@@ -213,11 +213,11 @@ GitHub 目前仍然是全世界最大的程式碼託管平台...也是全世界�
 C:\Users\andrew\Desktop>cp recommect.txt D:\
 ```
 
-所以你可以說這個複製檔案的行為，在 windows 下原本該用 cp 指令操作的，windows 將它包裝成讓你透過操作滑鼠的右鍵選單來做到。
+所以你可以說這個複製檔案的行為，在 windows 下原本可以用 cp 指令操作，但 windows 將它包裝成讓你透過操作滑鼠的右鍵選單來做到。
 
-同樣地，我們在使用 Git GUI tool 的時候，GUI tool 也會包裝那些 git 操作的概念。剛剛所提到的 clone、push、pull 的操錯概念，Git GUI tool 都會有對應的方式讓你不需要記指令就能操作。這就是使用 GUI tool 的意義。
+同樣地，我們在使用 Git GUI tool 的時候，GUI tool 也會包裝那些 git 操作的概念。剛剛所提到的 clone、push、pull 的操錯概念，在 Git GUI tool 都會有對應的方式讓你不需要記指令就能操作。這就是使用 GUI tool 的意義。
 
-Git GUI Tool 的另一個好處，是提供豐富的圖形化呈現方式，包含對 commit log 的呈現以及 branch 的關係圖。
+補充: Git GUI Tool 的另一個好處是提供豐富的圖形化呈現方式，包含對 commit log 的呈現以及 branch 的關係圖。因此有些人既使熟悉 git 的指令操作也會安裝 GUI Tool 當作 viewer，用來看 code、看 commit log。
 
 這邊提到的 commit log 是指開發者每次提交程式碼的時候，都需要寫下一段簡易的描述，說明這次修改了什麼？
 
