@@ -3,7 +3,7 @@
 
 ## 關於這份文件
 
-這份文件是為了配合往後的 Git/GitHub 教學所寫的前導文件。目的是讓你在學習 Git/GitHub 之前對一些背景知識以及名詞有些了解。
+這份文件是為了配合一些 Git/GitHub 教學所寫的前導文件。不會涉及太深入的版本管理議題，目的是讓你在學習 Git/GitHub 之前對一些背景知識以及名詞有些了解。
 
 
 ## 好吧，說真的 Git 到底是什麼?
@@ -178,10 +178,51 @@ GitHub 目前仍然是全世界最大的程式碼託管平台...也是全世界�
 但同樣的服務不只 GitHub 這一家，事實上有另一個稱為 **GitLab** 的程式碼託管平台也很熱門。2018 年 6/4，微軟以 75 億美元的股票收購了 GitHub。當時有很多視微軟為邪惡帝國的 GitHub 使用者還舉家遷出，將程式碼轉移到 GitLab，網路上還戲稱是「逃難潮」XD
 
 
---- 以下未完成 ---
-
-
 ## Git GUI 工具做了什麼事情?
 
-* 封裝指令操作
+記得剛剛提到 git 是個 client server 架構。通常你需要找一台主機，在上面安裝 git server 來管理你的 repository。你也可以使用像是 GitHub 或 GitLab 這樣的雲服務來免去自己設設 git server 的麻煩事。
 
+以上講的部分都是 remote 端管理的事情，但是對於 local 端 -- 也就是在你的電腦上，通常使用 git client tools 的方式就是透過 git 指令。
+
+其實 git 的指令不難學，如果你的 repository 只有自己一個人在使用 (即只有你自己會 push 檔案到 remote)，事實上你只需要會 5 個 git 指令就好 (clone, add, commit, pull, push)。
+
+但是這些指令需要在終端畫面中執行，(個人覺得) Linux 和 Mac 的終端環境比 Windwos 還好。但不是每個人都熟悉 Command Line 的使用方式。
+
+因此就有 Git GUI Tool 這樣的視窗介面工具出現。目前比較有名的有
+
+* Linux
+	* 嗯...不想介紹，都用 Linux 了給我乖乖用 command line!
+* Windows
+	* Sourcetree (很多人推薦)
+	* TortoiseGit
+	* GitHub Desktop
+* MacOS
+	* SourceTree (很多人推薦)
+* 跨平台 (Linux/Windows/Mac)
+	* GitKraken (很多人推薦)
+
+這裡不會介紹怎麼使用 GUI tool，至於該選用哪一個？最好的方式就是下載回來試用看看，你也可以配合自己的操作環境優先試用上面標示有 "很多人推薦" 的工具。
+
+使用 GUI tool 的概念其實就是幫你 "封裝指令操作"。舉個例子，當你要把 windows 桌面上的 file.txt 檔案複製到 D 槽下時，你會怎麼做？
+
+你應該會先用滑鼠點選 file.txt，按滑鼠右鍵叫出選單，點選 "複製"，然後開啟檔案總管到 D 槽目錄下，再次按滑鼠右鍵叫出選單，點選 "貼上"。
+
+事實上這樣的動作在 windows 也有指令幫你做這件事
+
+```
+C:\Users\andrew\Desktop>cp recommect.txt D:\
+```
+
+所以你可以說這個複製檔案的行為，在 windows 下原本該用 cp 指令操作的，windows 將它包裝成讓你透過操作滑鼠的右鍵選單來做到。
+
+同樣地，我們在使用 Git GUI tool 的時候，GUI tool 也會包裝那些 git 操作的概念。剛剛所提到的 clone、push、pull 的操錯概念，Git GUI tool 都會有對應的方式讓你不需要記指令就能操作。這就是使用 GUI tool 的意義。
+
+Git GUI Tool 的另一個好處，是提供豐富的圖形化呈現方式，包含對 commit log 的呈現以及 branch 的關係圖。
+
+這邊提到的 commit log 是指開發者每次提交程式碼的時候，都需要寫下一段簡易的描述，說明這次修改了什麼？
+
+而 branch 是版本控制系統中的一種管理方式，概念是你可以基於某一個狀態的程式碼建立一個分支 (branch)，這個分支版本通常可能是為了增加新的功能，或是解決 BUG，使用 branch 的用意在於不再修改的過程中更動主要的 code base。通常分支版本完成後，會再 merge 回主要的 code base。關於 branch 的管理屬於比較進階的議題，這裡不會提到。針對一般的個人專案與小型協作專案也不太會用到。 
+
+![](https://miro.medium.com/max/1600/1*RTgn1s0GY8r0rSPsAzf8NQ.png)
+
+~ END ~
