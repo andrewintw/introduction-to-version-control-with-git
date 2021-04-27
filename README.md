@@ -212,7 +212,7 @@ GitHub 目前仍然是全世界最大的程式碼託管平台...也是全世界�
 事實上這樣的動作在 windows 也有指令幫你做這件事
 
 ```
-C:\Users\andrew\Desktop>cp recommect.txt D:\
+C:\Users\andrew\Desktop>cp file.txt D:\
 ```
 
 所以你可以說這個複製檔案的行為，在 windows 下原本可以用 cp 指令操作，但 windows 將它包裝成讓你透過操作滑鼠的右鍵選單來做到。
