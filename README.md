@@ -172,9 +172,9 @@ git 於 2005 年問世後，GitHub 在 2008 年 2 月上線。剛剛提到 git �
 
 因為 GitHub 扮演 git server 的角色，而因為 server 也是儲存 repository 的地方。等於你必須將你的程式碼 push 到 GitHub 的主機上，因此這類的服務也稱為「程式碼託管」平台。
 
-GitHub 目前仍然是全世界最大的程式碼託管平台...也是全世界最大的工程師交友中心 (見下圖, 誤 XD)
+GitHub 目前仍然是全世界最大的程式碼託管平台...也是全世界最大的工程師交友中心 (from [Christiann MacAuley](https://www.instagram.com/sticky_comics/))
 
-![](https://live.staticflickr.com/6216/6251011880_5e5f9f3e74.jpg)
+![](https://www.stickycomics.com/wp-content/uploads/os_couples.jpg)
 
 
 但同樣的服務不只 GitHub 這一家，事實上有另一個稱為 **GitLab** 的程式碼託管平台也很熱門。2018 年 6/4，微軟以 75 億美元的股票收購了 GitHub。當時有很多視微軟為邪惡帝國的 GitHub 使用者還舉家遷出，將程式碼轉移到 GitLab，網路上還戲稱是「逃難潮」XD
